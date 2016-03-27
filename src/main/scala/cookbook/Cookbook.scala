@@ -2,19 +2,10 @@ package cookbook
 
 import scala.collection.immutable.List;
 
-class Recipe {
+case class Recipe(ingredients: List[String], directions: List[String])
 
-  var ingredients: List[String] = List.empty
-  var directions: List[String] = List.empty
+class Cookbook(val recipes: Map[String, Recipe]) {
 
-}
-
-class Cookbook {
-
-  var recipes: Map[String, Recipe] = Map.empty
-  
-  def main(args: Array[String]): Unit = {
-    println("testing main")
-  }
+  def this() = this(Map.empty)
 
 }
